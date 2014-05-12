@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--name", "txtcmdr-symfony"]
   end
 
-    config.vm.synced_folder "./application/txtcmdr/", "/vagrant", id: "vagrant-root", :nfs => false 
+    config.vm.synced_folder "./application/", "/vagrant", id: "vagrant-root", :nfs => false 
 
     config.vm.provision :puppet do |puppet|
         puppet.manifests_path = "puppet/manifests"
